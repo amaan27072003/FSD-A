@@ -1,3 +1,16 @@
 body{
     background-color: aquamarine;
 }
+table{
+    background-color: blueviolet;
+    border-radius: 10px;
+    border-color: maroon;
+    border-style: groove;
+    border-width: 10px;
+    color: aliceblue;
+}
+h1{
+    background-color: chartreuse;
+    color: black;
+    text-align: center;
+}
