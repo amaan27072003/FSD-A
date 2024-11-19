@@ -1,0 +1,30 @@
+#sem{
+    background-color: grey;
+    color: white;
+    border: 10px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    text-decoration: none;
+}
+h1{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+h2{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
