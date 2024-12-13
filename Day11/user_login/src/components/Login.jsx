@@ -1,48 +1,41 @@
-import React, { useState } from 'react';
-import './Login.css';
+import React from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ regLogin }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const navigate=useNavigate();
+    const handleLogin = (e) => {
+        e.preventDefault();
+        if (regLogin.email === email && regLogin.password === password) {
+            alert("login successful");
+            navigate("/dashboard")
+        } else {
+            alert("login failed!check credentials")
+        }
 
-  const handleLog = (e) => {
-    e.preventDefault();
-    if (regLogin.email === email && regLogin.password === password) {
-      alert('Login Successful');
-    } else {
-      alert('Error');
     }
-  };
+    return (
+        <div style={{ "width": "40vw" }}>
+            <form >
+                <div className="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email"
+                        onChange={(e) => setEmail(e.target.value)}
 
-  return (
-    <div className="login-container">
-      <form className="login-form">
-        <h2>Login</h2>
-        <div className="form-group">
-          <label htmlFor="email">Email address:</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            type="password"
-            className="form-control"
-            id="pwd"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <br />
-        <button className="btn btn-success" onClick={handleLog}>
-          Submit
-        </button>
-      </form>
-    </div>
-  );
-};
+                        className="form-control" id="email" />
+                </div>
+                <div className="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control" id="pwd" />
+                </div>
 
-export default Login;
+                <button style={{ "border": "1px solid black", "margin-top": "10px" }} onClick={handleLogin} className="btn btn-default">Login</button>
+            </form>
+
+        </div>
+    )
+}
+
+export default Login
